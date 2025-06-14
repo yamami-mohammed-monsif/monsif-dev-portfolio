@@ -8,8 +8,7 @@ import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title:
-    "Conversion-Focused Landing Page Developer for Small Businesses & Startups",
+  title: "Monsif Yamami | Conversion-Focused Landing Page Developer",
   description:
     "I help small businesses and startups turn visitors into customers by designing and developing fast, modern, and conversion-optimized landing pages using Next.js, TypeScript, and Tailwind CSS.",
   keywords: [
