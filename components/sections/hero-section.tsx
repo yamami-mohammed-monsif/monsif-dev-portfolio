@@ -26,7 +26,7 @@ export function HeroSection() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative min-h-screen flex items-center pt-8 lg:pt-16 xl:pt-0 overflow-hidden transition-all duration-500"
+      className="relative min-h-screen flex items-center pt-4 sm:pt-8 lg:pt-16 xl:pt-0 overflow-hidden transition-all duration-500"
       style={{
         backgroundImage:
           "radial-gradient(circle at center, rgba(109, 40, 217, 0.15) 0%, rgba(10, 15, 22, 0) 70%)",
