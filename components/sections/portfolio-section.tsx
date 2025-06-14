@@ -81,7 +81,7 @@ export function PortfolioSection() {
                 <Image
                   src={item.image}
                   alt={item.imageAlt}
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="transition-transform duration-300 transform hover:scale-105"
                 />

@@ -8,11 +8,25 @@ import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Landing Page Developer & Designer",
-  description: "Freelance developer specializing in converting landing pages for small businesses and startups. From design to copy to code, I build high-performance websites that convert.",
-  keywords: ["landing page developer", "freelance web developer", "conversion rate optimization", "web design", "landing page design", "startup website", "small business website"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  title:
+    "Conversion-Focused Landing Page Developer for Small Businesses & Startups",
+  description:
+    "I help small businesses and startups turn visitors into customers by designing and developing fast, modern, and conversion-optimized landing pages using Next.js, TypeScript, and Tailwind CSS.",
+  keywords: [
+    "landing page developer",
+    "freelance web developer",
+    "conversion rate optimization",
+    "web design",
+    "landing page design",
+    "startup website",
+    "small business website",
+    "next.js developer",
+    "tailwind css developer",
+    "responsive websites",
+    "conversion-focused design",
+  ],
+  authors: [{ name: "Yamami Mohammed Monsif" }],
+  creator: "Yamami Mohammed Monsif",
 };
 
 export const viewport: Viewport = {
