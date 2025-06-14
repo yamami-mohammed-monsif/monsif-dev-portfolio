@@ -26,7 +26,7 @@ export function HeroSection() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative min-h-screen flex items-center pt-4 sm:pt-8 lg:pt-16 xl:pt-0 overflow-hidden transition-all duration-500"
+      className="relative xl:h-screen flex items-center pt-28 pb-16 md:pb-28 lg:pt-36 lg:pb-32 overflow-hidden transition-all duration-500"
       style={{
         backgroundImage:
           "radial-gradient(circle at center, rgba(109, 40, 217, 0.15) 0%, rgba(10, 15, 22, 0) 70%)",
@@ -44,7 +44,7 @@ export function HeroSection() {
               transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
               className="flex flex-col space-y-6 max-w-2xl"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-[52px] lg:text-6xl font-bold tracking-tight leading-tight">
                 <span className="text-accent">Conversion Focused</span> Landing
                 Pages for Small Businesses
               </h1>
