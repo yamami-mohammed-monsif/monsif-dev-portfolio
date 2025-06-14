@@ -11,11 +11,13 @@ import { Send } from "lucide-react";
 export function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // Add honeypot field to formData state (not shown to user)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     message: "",
+    website: "", // Honeypot field
   });
 
   const handleChange = (
@@ -25,28 +27,88 @@ export function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted", formData);
-
+    if (isSubmitting) return; // Prevent multiple submissions
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Honeypot check: if the hidden field is filled, treat as spam and silently return
+    if (formData.website) {
       setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you shortly.",
+      return;
+    }
+
+    try {
+      if (
+        !formData.name.trim() ||
+        !formData.email.trim() ||
+        !formData.message.trim()
+      ) {
+        toast({
+          title: "Error",
+          description: "Please fill in all fields before submitting.",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        toast({
+          title: "Error",
+          description: "Please enter a valid email address.",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("company", formData.company);
+      formDataToSend.append("message", formData.message);
+      formDataToSend.append(
+        "access_key",
+        process.env.NEXT_PUBLIC_WEB3FORMS_KEY || ""
+      );
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
       });
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        message: "",
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Success",
+          description: "Message Sent! I'll get back to you shortly.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+          website: "", // Reset honeypot field
+        });
+        setIsSubmitting(false);
+      } else {
+        toast({
+          title: "Error",
+          description:
+            data.message || "Failed to send message. Please try again.",
+        });
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again later.",
       });
-    }, 1500);
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,6 +129,16 @@ export function ContactSection() {
             <Card className="bg-background border border-border/40">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field: hidden from users, bots may fill it */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleChange}
+                    autoComplete="off"
+                    tabIndex={-1}
+                    style={{ display: "none" }}
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
