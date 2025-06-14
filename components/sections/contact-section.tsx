@@ -173,7 +173,7 @@ export function ContactSection() {
 
                   <div className="space-y-2">
                     <label htmlFor="company" className="text-sm font-medium">
-                      Company
+                      Company (Optional)
                     </label>
                     <Input
                       id="company"
