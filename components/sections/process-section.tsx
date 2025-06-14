@@ -1,5 +1,3 @@
-// ProcessSection.tsx
-
 "use client";
 
 import { useState } from "react";
@@ -12,6 +10,7 @@ import {
   Rocket,
   ArrowRight,
 } from "lucide-react";
+import { MotionProvider, motion, AnimatePresence } from "@/lib/MotionProvider";
 
 const processSteps = [
   {
@@ -118,54 +117,71 @@ export function ProcessSection() {
               </TabsList>
             </div>
 
-            {processSteps.map((step, index) => (
-              <TabsContent
-                key={step.id}
-                value={step.id}
-                className="border border-border/30 rounded-lg p-6"
-              >
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="flex-shrink-0">
-                    <div className="h-16 w-16 rounded-full bg-accent/10 flex items-center justify-center">
-                      <step.icon className="h-8 w-8 text-accent" />
-                    </div>
-                  </div>
+            <MotionProvider>
+              <AnimatePresence mode="wait" initial={false}>
+                {processSteps.map((step, index) =>
+                  activeTab === step.id ? (
+                    <TabsContent
+                      key={step.id}
+                      value={step.id}
+                      forceMount
+                      className="border border-border/30 rounded-lg p-6"
+                    >
+                      <motion.div
+                        key={step.id}
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -24 }}
+                        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                      >
+                        <div className="flex flex-col md:flex-row gap-8 items-start">
+                          <div className="flex-shrink-0">
+                            <div className="h-16 w-16 rounded-full bg-accent/10 flex items-center justify-center">
+                              <step.icon className="h-8 w-8 text-accent" />
+                            </div>
+                          </div>
 
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-3 flex items-center">
-                      <span className="text-accent mr-2">{index + 1}.</span>{" "}
-                      {step.title}
-                    </h3>
-                    <p className="text-foreground/70 text-base md:text-lg mb-6">
-                      {step.description}
-                    </p>
+                          <div className="flex-grow">
+                            <h3 className="text-2xl font-bold mb-3 flex items-center">
+                              <span className="text-accent mr-2">
+                                {index + 1}.
+                              </span>{" "}
+                              {step.title}
+                            </h3>
+                            <p className="text-foreground/70 text-base md:text-lg mb-6">
+                              {step.description}
+                            </p>
 
-                    <ul className="space-y-3">
-                      {step.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <ArrowRight className="h-5 w-5 text-accent mr-3 mt-0.5 flex-shrink-0" />
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+                            <ul className="space-y-3">
+                              {step.details.map((detail, idx) => (
+                                <li key={idx} className="flex items-start">
+                                  <ArrowRight className="h-5 w-5 text-accent mr-3 mt-0.5 flex-shrink-0" />
+                                  <span>{detail}</span>
+                                </li>
+                              ))}
+                            </ul>
 
-                    <div className="mt-8 flex justify-end">
-                      {index < processSteps.length - 1 && (
-                        <button
-                          onClick={() =>
-                            setActiveTab(processSteps[index + 1].id)
-                          }
-                          className="flex items-center text-accent hover:text-accent/80 font-medium"
-                        >
-                          Next: {processSteps[index + 1].title}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
-            ))}
+                            <div className="mt-8 flex justify-end">
+                              {index < processSteps.length - 1 && (
+                                <button
+                                  onClick={() =>
+                                    setActiveTab(processSteps[index + 1].id)
+                                  }
+                                  className="flex items-center text-accent hover:text-accent/80 font-medium"
+                                >
+                                  Next: {processSteps[index + 1].title}
+                                  <ArrowRight className="ml-2 h-4 w-4" />
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </TabsContent>
+                  ) : null
+                )}
+              </AnimatePresence>
+            </MotionProvider>
           </Tabs>
         </div>
       </div>

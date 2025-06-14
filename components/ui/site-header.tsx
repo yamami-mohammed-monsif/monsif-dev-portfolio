@@ -22,6 +22,7 @@ export function SiteHeader() {
     { href: "#hero", label: "Home" },
     { href: "#services", label: "Services" },
     { href: "#portfolio", label: "Portfolio" },
+    { href: "#process", label: "Process" },
   ];
 
   return (
@@ -86,31 +87,42 @@ export function SiteHeader() {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm border-b">
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button
-              asChild
-              variant="default"
-              className="bg-accent hover:bg-accent/90 text-white mt-2"
+      <div
+        className={`md:hidden bg-background/95 backdrop-blur-sm border-b transition-all duration-300 ease-in-out transform ${
+          isMobileMenuOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          top: "100%",
+        }}
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <nav className="container mx-auto px-4 py-4 flex flex-col space-y-3">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                Let's Talk
-              </Link>
-            </Button>
-          </nav>
-        </div>
-      )}
+              {link.label}
+            </Link>
+          ))}
+          <Button
+            asChild
+            variant="default"
+            className="bg-accent hover:bg-accent/90 text-white mt-2"
+          >
+            <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              Let's Talk
+            </Link>
+          </Button>
+        </nav>
+      </div>
     </header>
   );
 }

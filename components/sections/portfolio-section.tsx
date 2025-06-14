@@ -82,8 +82,7 @@ export function PortfolioSection() {
                   src={item.image}
                   alt={item.imageAlt}
                   fill
-                  objectFit="cover"
-                  className="transition-transform duration-300 transform hover:scale-105"
+                  className="object-cover transition-transform duration-300 transform hover:scale-105"
                 />
               </div>
               <CardContent className="p-6 flex flex-col gap-4">

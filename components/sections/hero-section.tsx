@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Globe, Zap } from "lucide-react";
 import Link from "next/link";
+import { MotionProvider, motion } from "@/lib/MotionProvider";
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -33,55 +34,67 @@ export function HeroSection() {
         backgroundPosition: "0% 0%",
       }}
     >
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none"></div>
       <div className="container mx-auto px-4 z-10">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col space-y-6 max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              <span className="text-accent">Conversion Focused</span> Landing
-              Pages for Small Businesses
-            </h1>
+          <MotionProvider>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+              className="flex flex-col space-y-6 max-w-2xl"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                <span className="text-accent">Conversion Focused</span> Landing
+                Pages for Small Businesses
+              </h1>
 
-            <p className="text-lg text-foreground/80 max-w-lg">
-              I craft custom landing pages that help small businesses and
-              startups turn more visitors into leads with fast load speeds,
-              clean code, and zero fluff.
-            </p>
+              <p className="text-lg text-foreground/80 max-w-lg">
+                I craft custom landing pages that help small businesses and
+                startups turn more visitors into leads with fast load speeds,
+                clean code, and zero fluff.
+              </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent hover:bg-accent/90 hover:scale-105 transition-all duration-300 text-white rounded-full"
-              >
-                <Link href="#contact">
-                  Let's Discuss Your Project Now{" "}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-accent hover:bg-accent/90 hover:scale-105 transition-all duration-300 text-white rounded-full"
+                >
+                  <Link href="#contact">
+                    Let's Discuss Your Project Now{" "}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
 
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              <div className="flex flex-col items-center">
-                <div className="rounded-full bg-accent/10 p-3 mb-2">
-                  <Code className="h-5 w-5 text-accent" />
-                </div>
-                <span className="text-sm text-center">Clean Code</span>
+              {/* Staggered feature icons */}
+              <div className="grid grid-cols-3 gap-4 pt-8">
+                {[
+                  { icon: Code, label: "Clean Code" },
+                  { icon: Zap, label: "Fast Performance" },
+                  { icon: Globe, label: "SEO Optimized" },
+                ].map((feature, i) => (
+                  <motion.div
+                    key={feature.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.5 + i * 0.15,
+                      duration: 0.5,
+                      ease: [0.4, 0, 0.2, 1],
+                    }}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="rounded-full bg-accent/10 p-3 mb-2">
+                      <feature.icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <span className="text-sm text-center">{feature.label}</span>
+                  </motion.div>
+                ))}
               </div>
-              <div className="flex flex-col items-center">
-                <div className="rounded-full bg-accent/10 p-3 mb-2">
-                  <Zap className="h-5 w-5 text-accent" />
-                </div>
-                <span className="text-sm text-center">Fast Performance</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="rounded-full bg-accent/10 p-3 mb-2">
-                  <Globe className="h-5 w-5 text-accent" />
-                </div>
-                <span className="text-sm text-center">SEO Optimized</span>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </MotionProvider>
 
           <div className="relative hidden xl:block">
             <div className="absolute -top-16 -left-16 w-64 h-64 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
