@@ -6,7 +6,7 @@
 
 ## 🧠 About This Project
 
-This portfolio is part of my personal brand as a **freelance web developer** who specializes in building **high-converting landing pages**. It reflects my focus on performance, responsive design, and strategic conversion-based development.
+This portfolio is part of my personal brand as a **freelance web developer** who specializes in building **high converting landing pages for small businesses & startups**. It reflects my focus on performance, responsive design, and strategic conversion based development.
 
 ---
 
@@ -32,10 +32,10 @@ This portfolio is part of my personal brand as a **freelance web developer** who
 
 ## 🎯 Goals & Strategy
 
-This project is more than a portfolio — it's built with the same principles I apply when working with clients:
+This project is more than a portfolio, it's built with the same principles I apply when working with clients:
 
-- **Fast-loading, responsive design** for optimal user experience on all devices
-- **Conversion-focused copy and layout** to drive action
+- **Fast loading, responsive design** for optimal user experience on all devices
+- **Conversion focused copy and layout** to drive action
 - **SEO best practices** for visibility
 - **Clear CTAs** to guide visitors into leads
 
@@ -53,4 +53,4 @@ You can reach out via [LinkedIn](https://www.linkedin.com/in/mohamed-moncif-yama
 
 ---
 
-> _This website reflects my goal to help small businesses and startups grow by turning visitors into leads and customers with smart, high-performing landing pages._
+> _This website reflects my goal to help small businesses and startups grow by turning visitors into leads and customers with smart, high performing landing pages._
