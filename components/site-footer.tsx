@@ -13,7 +13,7 @@ export function SiteFooter() {
             href="/"
             className="text-2xl font-bold text-foreground hover:text-primary/90 transition-colors mb-6 md:mb-0"
           >
-            <span className="text-accent">MON</span>CIF
+            <span className="text-accent">MON</span>SIF
           </Link>
 
           <div className="flex items-center space-x-6">

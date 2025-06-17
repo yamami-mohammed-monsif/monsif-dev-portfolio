@@ -39,7 +39,7 @@ export function SiteHeader() {
             href="/"
             className="text-xl font-bold text-foreground hover:text-primary/90 transition-colors"
           >
-            <span className="text-accent">MON</span>CIF
+            <span className="text-accent">MON</span>SIF
           </Link>
 
           {/* Desktop Navigation */}
