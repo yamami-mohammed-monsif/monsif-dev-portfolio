@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Yamami Mohammed Monsif" }],
   creator: "Yamami Mohammed Monsif",
+  verification: {
+    google: "dGLIFk8hwp3H82khhTzBwt9Zsf27jyy6cG0UxtNtjlY",
+  },
 };
 
 export const viewport: Viewport = {
