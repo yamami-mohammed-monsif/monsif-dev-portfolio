@@ -15,7 +15,7 @@ const portfolioItems = [
     title: "Fresh Produce Delivery Landing Page",
     description:
       "Custom-built, conversion-driven landing page for fresh produce delivery.",
-    image: "/portfolio-1.png",
+    image: "/project-1.png",
     imageAlt: "Fresh Produce Delivery Landing Page screenshot",
     demoUrl: "https://green-harvest-tau.vercel.app/",
     sourceUrl: "https://github.com/yamami-mohammed-monsif/green_harvest",
@@ -25,28 +25,39 @@ const portfolioItems = [
     title: "Fitness & Trial Sign-up Landing Page",
     description:
       "Custom-built, conversion-driven landing page for fitness gym trial sign-ups.",
-    image: "/portfolio-2.png",
-    imageAlt: "E-commerce product page screenshot",
+    image: "/project-2.png",
+    imageAlt: "flexzone gym landing page screenshot",
     demoUrl: "https://flex-zone-gym.vercel.app/",
     sourceUrl: "https://github.com/yamami-mohammed-monsif/flexZone_gym",
   },
   {
     id: 3,
+    title: "Finance Coach Landing Page",
+    description:
+      "Custom-built, conversion-driven landing page for finance coach lead magnet.",
+    image: "/project-3.png",
+    imageAlt: "fincance coach landing page screenshot",
+    demoUrl: "https://samantha-green-finance-coach.vercel.app/",
+    sourceUrl:
+      "https://github.com/yamami-mohammed-monsif/samantha_green-finance_coach",
+  },
+  {
+    id: 4,
     title: "Design Agency: High-Converting Portfolio Website",
     description:
       "Responsive portfolio website showcasing design services and driving client inquiries.",
-    image: "/portfolio-3.png",
-    imageAlt: "Service business homepage screenshot",
+    image: "/project-4.png",
+    imageAlt: "Design agency landing page screenshot",
     demoUrl: "https://design-agency-two.vercel.app/",
     sourceUrl: "https://github.com/yamami-mohammed-monsif/Design-Agency",
   },
   {
-    id: 4,
+    id: 5,
     title: "Digital Marketing Agency: Client Engagement Website",
     description:
       "Performance-optimized website driving client engagement for a digital marketing agency.",
-    image: "/portfolio-4.png",
-    imageAlt: "Startup pitch deck website screenshot",
+    image: "/project-5.png",
+    imageAlt: "digital marketing agency landing page screenshot",
     demoUrl: "https://digital-marketing-agency-liard.vercel.app/",
     sourceUrl:
       "https://github.com/yamami-mohammed-monsif/digital_marketing_agency",
