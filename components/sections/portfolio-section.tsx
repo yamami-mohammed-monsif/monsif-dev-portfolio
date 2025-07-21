@@ -126,11 +126,11 @@ export function PortfolioSection() {
           <Button
             asChild
             size="lg"
-            className="bg-accent hover:bg-accent/90 hover:scale-105 transition-all duration-300 text-white rounded-full"
+            className="bg-accent hover:bg-accent/90 hover:scale-105 transition-all duration-300 text-white rounded-full group"
           >
             <Link href="#contact">
               Like what you see? Let’s build yours{" "}
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:-rotate-45 transition-transform duration-300" />
             </Link>
           </Button>
         </div>
