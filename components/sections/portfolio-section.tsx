@@ -15,7 +15,7 @@ const portfolioItems = [
     title: "Fresh Produce Delivery Landing Page",
     description:
       "Custom-built, conversion-driven landing page for fresh produce delivery.",
-    image: "/project-1.png",
+    image: "/project-1.webp",
     imageAlt: "Fresh Produce Delivery Landing Page screenshot",
     demoUrl: "https://green-harvest-tau.vercel.app/",
     sourceUrl: "https://github.com/yamami-mohammed-monsif/green_harvest",
@@ -25,7 +25,7 @@ const portfolioItems = [
     title: "Fitness & Trial Sign-up Landing Page",
     description:
       "Custom-built, conversion-driven landing page for fitness gym trial sign-ups.",
-    image: "/project-2.png",
+    image: "/project-2.webp",
     imageAlt: "flexzone gym landing page screenshot",
     demoUrl: "https://flex-zone-gym.vercel.app/",
     sourceUrl: "https://github.com/yamami-mohammed-monsif/flexZone_gym",
@@ -35,7 +35,7 @@ const portfolioItems = [
     title: "Finance Coach Landing Page",
     description:
       "Custom-built, conversion-driven landing page for finance coach lead magnet.",
-    image: "/project-3.png",
+    image: "/project-3.webp",
     imageAlt: "fincance coach landing page screenshot",
     demoUrl: "https://samantha-green-finance-coach.vercel.app/",
     sourceUrl:
@@ -46,7 +46,7 @@ const portfolioItems = [
     title: "Design Agency: High-Converting Portfolio Website",
     description:
       "Responsive portfolio website showcasing design services and driving client inquiries.",
-    image: "/project-4.png",
+    image: "/project-4.webp",
     imageAlt: "Design agency landing page screenshot",
     demoUrl: "https://design-agency-two.vercel.app/",
     sourceUrl: "https://github.com/yamami-mohammed-monsif/Design-Agency",
@@ -56,7 +56,7 @@ const portfolioItems = [
     title: "Digital Marketing Agency: Client Engagement Website",
     description:
       "Performance-optimized website driving client engagement for a digital marketing agency.",
-    image: "/project-5.png",
+    image: "/project-5.webp",
     imageAlt: "digital marketing agency landing page screenshot",
     demoUrl: "https://digital-marketing-agency-liard.vercel.app/",
     sourceUrl:
