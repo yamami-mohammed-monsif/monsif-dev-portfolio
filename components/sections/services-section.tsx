@@ -57,7 +57,7 @@ export function ServicesSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             What I Can Do for Your Business
           </h2>
-          <p className="text-foreground/70 text-lg">
+          <p className="text-foreground/70 text-lg max-w-[600px] mx-auto">
             From strategy to launch. I offer everything you need to turn
             visitors into customers with purpose-built landing pages.
           </p>

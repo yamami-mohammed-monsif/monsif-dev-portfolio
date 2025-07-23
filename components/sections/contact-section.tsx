@@ -118,7 +118,7 @@ export function ContactSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to launch a landing page that actually converts?
           </h2>
-          <p className="text-foreground/70 text-lg">
+          <p className="text-foreground/70 text-lg max-w-[600px] mx-auto">
             Share your vision below, and let's build a strategy for your next
             high-performing digital asset.
           </p>

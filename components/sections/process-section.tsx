@@ -89,7 +89,7 @@ export function ProcessSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             How I Build High-Converting Pages
           </h2>
-          <p className="text-foreground/70 text-lg">
+          <p className="text-foreground/70 text-lg max-w-[600px] mx-auto">
             A simple, structured process that keeps things clear, efficient, and
             focused on results.
           </p>

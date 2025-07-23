@@ -74,7 +74,7 @@ export function PortfolioSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Projects That Convert
           </h2>
-          <p className="text-foreground/70 text-lg">
+          <p className="text-foreground/70 text-lg max-w-[600px] mx-auto">
             Each project was built with a real business use case in mind
             designed to drive a specific action.
           </p>
