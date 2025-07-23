@@ -20,7 +20,7 @@ const processSteps = [
       "I start by Understanding your business, goals, and audience. We’ll clarify the purpose of your landing page and who it’s for so everything we build is aligned with the outcome you want.",
     icon: Search,
     details: [
-      "discovery call",
+      "project inquiry and discovery",
       "Define your single conversion goal",
       "Understand your audience’s pain points",
       "Gather existing content or strategy insights",
