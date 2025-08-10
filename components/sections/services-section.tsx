@@ -15,36 +15,42 @@ import { MotionProvider, motion } from "@/lib/MotionProvider";
 
 const services = [
   {
+    id: 1,
     title: "Landing Page Design",
     description:
       "Visually strategic designs built to capture attention, guide visitors, and drive specific actions from the first fold.",
     icon: Palette,
   },
   {
+    id: 2,
     title: "Conversion Copywriting",
     description:
-      "Persuasive, user-focused copy that speaks directly to your audience’s pain points and motivates them to take action.",
+      "Persuasive, user-focused copy that speaks directly to your audience's pain points and motivates them to take action.",
     icon: PenTool,
   },
   {
+    id: 3,
     title: "Landing Page Development",
     description:
       "Fast, responsive, and accessible builds using Next.js and Tailwind, optimized for both performance and maintainability.",
     icon: Code,
   },
   {
+    id: 4,
     title: "Performance Optimization",
     description:
       "Every page is lightweight and fast-loading by default. Optimized code, images, and lazy loading to boost engagement.",
     icon: Zap,
   },
   {
+    id: 5,
     title: "Conversion Rate Optimization",
     description:
       "Pages structured with CRO principles: clear CTAs, trust signals, and persuasive layouts designed to convert on first visit.",
     icon: BarChart3,
   },
   {
+    id: 6,
     title: "Launch & Deployment",
     description:
       "Your landing page is launched professionally on Vercel with a custom domain, optimized for speed and SEO.",
@@ -70,7 +76,7 @@ export function ServicesSection() {
           <MotionProvider>
             {services.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
