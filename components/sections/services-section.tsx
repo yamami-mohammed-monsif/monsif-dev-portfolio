@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -9,6 +11,7 @@ import { Code, Palette, Rocket, Zap, PenTool, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { MotionProvider, motion } from "@/lib/MotionProvider";
 
 const services = [
   {
@@ -64,24 +67,35 @@ export function ServicesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="bg-background border border-border/40 hover:border-accent/30 hover:scale-105 transition-all duration-300 hover:shadow-md hover:shadow-accent/5"
-            >
-              <CardHeader className="pb-2">
-                <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <service.icon className="h-6 w-6 text-accent" />
-                </div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-foreground/70 text-base">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          <MotionProvider>
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.5,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
+                <Card className="bg-background border border-border/40 hover:border-accent/30 hover:scale-105 transition-all duration-300 hover:shadow-md hover:shadow-accent/5">
+                  <CardHeader className="pb-2">
+                    <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                      <service.icon className="h-6 w-6 text-accent" />
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-foreground/70 text-base">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </MotionProvider>
         </div>
         <div className="flex flex-wrap gap-3 pt-2 justify-center mt-16">
           <Button
