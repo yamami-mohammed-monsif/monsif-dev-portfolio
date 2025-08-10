@@ -7,6 +7,7 @@ import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { MotionProvider, motion } from "@/lib/MotionProvider";
 
 // Mock portfolio data
 const portfolioItems = [
@@ -81,57 +82,71 @@ export function PortfolioSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioItems.map((item) => (
-            <Card
-              key={item.id}
-              className="overflow-hidden border border-border/40 bg-background/30 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:border-accent/30 hover:scale-105"
-              onMouseEnter={() => setHoveredItem(item.id)}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <div className="relative overflow-hidden aspect-video">
-                <Image
-                  src={item.image}
-                  alt={item.imageAlt}
-                  fill
-                  className="object-cover transition-transform duration-300 transform hover:scale-105"
-                />
-              </div>
-              <CardContent className="p-6 flex flex-col gap-4">
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-foreground/70 text-base mb-4">
-                  {item.description}
-                </p>
-                <div className="flex gap-3">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="border-accent text-accent hover:bg-accent/10"
-                  >
-                    <a
-                      href={item.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live Demo <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="border-muted text-muted-foreground hover:bg-muted/10"
-                  >
-                    <a
-                      href={item.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Source Code <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          <MotionProvider>
+            {portfolioItems.map((item) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  delay: item.id * 0.1,
+                  duration: 0.5,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+              >
+                <Card
+                  key={item.id}
+                  className="overflow-hidden border border-border/40 bg-background/30 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:border-accent/30 hover:scale-105"
+                  onMouseEnter={() => setHoveredItem(item.id)}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  <div className="relative overflow-hidden aspect-video">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      className="object-cover transition-transform duration-300 transform hover:scale-105"
+                    />
+                  </div>
+                  <CardContent className="p-6 flex flex-col gap-4">
+                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                    <p className="text-foreground/70 text-base mb-4">
+                      {item.description}
+                    </p>
+                    <div className="flex gap-3">
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="border-accent text-accent hover:bg-accent/10"
+                      >
+                        <a
+                          href={item.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Demo <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                      <Button
+                        asChild
+                        variant="outline"
+                        className="border-muted text-muted-foreground hover:bg-muted/10"
+                      >
+                        <a
+                          href={item.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Source Code <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </MotionProvider>
         </div>
         <div className="flex flex-wrap gap-3 pt-2 justify-center mt-16">
           <Button
