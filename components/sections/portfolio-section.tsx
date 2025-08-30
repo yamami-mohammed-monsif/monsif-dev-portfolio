@@ -13,7 +13,7 @@ import { MotionProvider, motion } from "@/lib/MotionProvider";
 const portfolioItems = [
   {
     id: 1,
-    title: "Fresh Produce Delivery Landing Page",
+    title: "Green Harvest",
     description:
       "Custom-built, conversion-driven landing page for fresh produce delivery.",
     image: "/project-1.webp",
@@ -23,7 +23,7 @@ const portfolioItems = [
   },
   {
     id: 2,
-    title: "Fitness & Trial Sign-up Landing Page",
+    title: "Flexzone Gym",
     description:
       "Custom-built, conversion-driven landing page for fitness gym trial sign-ups.",
     image: "/project-2.webp",
@@ -33,7 +33,7 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "Finance Coach Landing Page",
+    title: "Samantha Green - Finance Coach",
     description:
       "Custom-built, conversion-driven landing page for finance coach lead magnet.",
     image: "/project-3.webp",
@@ -44,7 +44,7 @@ const portfolioItems = [
   },
   {
     id: 4,
-    title: "Design Agency: High-Converting Portfolio Website",
+    title: "Design Agency",
     description:
       "Responsive portfolio website showcasing design services and driving client inquiries.",
     image: "/project-4.webp",
@@ -54,7 +54,7 @@ const portfolioItems = [
   },
   {
     id: 5,
-    title: "Digital Marketing Agency: Client Engagement Website",
+    title: "Digital Marketing Agency",
     description:
       "Performance-optimized website driving client engagement for a digital marketing agency.",
     image: "/project-5.webp",

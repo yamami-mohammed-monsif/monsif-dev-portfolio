@@ -44,7 +44,7 @@ export function HeroSection() {
               transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
               className="flex flex-col space-y-6 max-w-2xl"
             >
-              <h1 className="text-4xl sm:text-5xl md:text-[52px] lg:text-6xl font-bold tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-[52px] lg:text-6xl font-bold tracking-tight leading-tight lg:leading-[1.2]">
                 <span className="text-accent">Conversion Focused</span> Landing
                 Pages for Small Businesses
               </h1>
