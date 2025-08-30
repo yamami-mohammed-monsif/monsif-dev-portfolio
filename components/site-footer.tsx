@@ -51,7 +51,7 @@ export function SiteFooter() {
         </div>
         <div className=" flex items-center justify-center md:justify-start gap-4">
           <Link
-            href="https://www.linkedin.com/in/mohamed-moncif-yamami-000292367/"
+            href="https://www.linkedin.com/in/mohammed-monsif-yamami-32b596378/"
             target="_blank"
           >
             <svg
